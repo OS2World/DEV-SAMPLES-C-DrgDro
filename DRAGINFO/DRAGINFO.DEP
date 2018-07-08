@@ -1,0 +1,57 @@
+# IBM Developer's Workframe/2 Make File Creation run at 19:34:12 on 03/20/93
+
+# Make File Creation run in directory:
+#   D:\QUELLEN\C2\DRAGINFO;
+
+# Assumed INCLUDE environment variable path:
+#   C:\DEVL\C2\INCLUDE;
+#   C:\TOOLKT20\C\OS2H;
+#   C:\TOOLKT20\ASM\OS2INC;
+
+
+DRAGINFO.RES:  DRAGINFO.RC  \
+#  {.;$(INCLUDE)}OS2.H  \
+   {.;$(INCLUDE)}DRAGINFO.H  \
+#    {.;$(INCLUDE)}OS2.H  \
+#    {.;$(INCLUDE)}STDIO.H  \
+#    {.;$(INCLUDE)}STDLIB.H  \
+#    {.;$(INCLUDE)}STRING.H  \
+#    {.;$(INCLUDE)}CTYPE.H  \
+     {.;$(INCLUDE)}DRGCONFG.H  \
+   DRAGINFO.ICO  \
+   DRGDRAG.ICO  \
+   DRAGINFO.DLG  \
+     DRGCONFG.H  \
+   DRAGINFO.MAK
+
+DRAGDLG.OBJ:  DRAGDLG.C  \
+   {.;$(INCLUDE);}draginfo.h  \
+#    {$(INCLUDE);}os2.h  \
+#    {$(INCLUDE);}stdio.h  \
+#    {$(INCLUDE);}stdlib.h  \
+#    {$(INCLUDE);}string.h  \
+#    {$(INCLUDE);}ctype.h  \
+     {.;$(INCLUDE);}drgconfg.h  \
+   DRAGINFO.MAK
+
+DRAGINFO.OBJ:  DRAGINFO.C  \
+   {.;$(INCLUDE);}draginfo.h  \
+#    {$(INCLUDE);}os2.h  \
+#    {$(INCLUDE);}stdio.h  \
+#    {$(INCLUDE);}stdlib.h  \
+#    {$(INCLUDE);}string.h  \
+#    {$(INCLUDE);}ctype.h  \
+     {.;$(INCLUDE);}drgconfg.h  \
+   {.;$(INCLUDE);}pmassert.h  \
+   DRAGINFO.MAK
+
+DRAGOBJ.OBJ:  DRAGOBJ.C  \
+   {.;$(INCLUDE);}draginfo.h  \
+#    {$(INCLUDE);}os2.h  \
+#    {$(INCLUDE);}stdio.h  \
+#    {$(INCLUDE);}stdlib.h  \
+#    {$(INCLUDE);}string.h  \
+#    {$(INCLUDE);}ctype.h  \
+     {.;$(INCLUDE);}drgconfg.h  \
+   {.;$(INCLUDE);}pmassert.h  \
+   DRAGINFO.MAK

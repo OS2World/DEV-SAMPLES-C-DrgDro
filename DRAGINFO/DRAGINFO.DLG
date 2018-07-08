@@ -1,0 +1,78 @@
+DLGINCLUDE 1 "DRGCONFG.H"
+
+DLGTEMPLATE IDD_CDIR LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Change Directory", IDD_CDIR, 12, 36, 261, 54, WS_VISIBLE, 
+            FCF_TITLEBAR
+    BEGIN
+        ENTRYFIELD      "", EF_DIRECTORY, 13, 29, 236, 8, ES_MARGIN
+        DEFPUSHBUTTON   "OK", DID_OK, 74, 5, 40, 14
+        PUSHBUTTON      "Cancel", DID_CANCEL, 142, 5, 40, 14
+    END
+END
+
+DLGTEMPLATE IDD_DISCARD LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Discard Objects (test)", IDD_DISCARD, 41, 22, 141, 112, 
+            WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        LISTBOX         LB_DISCARD, 9, 26, 120, 83, LS_MULTIPLESEL
+        DEFPUSHBUTTON   "OK", DID_OK, 48, 5, 40, 14
+    END
+END
+
+DLGTEMPLATE IDD_CONFIG1 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "DrgDrag parameters", IDD_CONFIG1, 86, 20, 245, 209, WS_VISIBLE, 
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        CONTROL         "", CO_OPERATION, 8, 164, 92, 35, WC_COMBOBOX, 
+                        CBS_DROPDOWNLIST | WS_GROUP | WS_TABSTOP | 
+                        WS_VISIBLE
+        LTEXT           "Draginfo.usOperation:", -1, 8, 199, 110, 8
+        CONTROL         "", CO_TYPE, 115, 164, 91, 35, WC_COMBOBOX, 
+                        CBS_DROPDOWNLIST | WS_GROUP | WS_TABSTOP | 
+                        WS_VISIBLE
+        LTEXT           "Dragitem.hstrType:", -1, 115, 199, 97, 8
+        CONTROL         "", CO_MECH, 8, 119, 92, 38, WC_COMBOBOX, 
+                        CBS_DROPDOWN | WS_GROUP | WS_TABSTOP | WS_VISIBLE
+        LTEXT           "Dragitem.Mechanism:", -1, 8, 157, 104, 8
+        CONTROL         "", CO_FORMAT, 115, 120, 91, 37, WC_COMBOBOX, 
+                        CBS_DROPDOWN | WS_GROUP | WS_TABSTOP | WS_VISIBLE
+        LTEXT           "Dragitem.Format:", -1, 115, 157, 102, 8
+        DEFPUSHBUTTON   "OK", DID_OK, 10, 5, 40, 16
+        PUSHBUTTON      "Cancel", DID_CANCEL, 62, 5, 40, 16
+        LTEXT           "Dragitem.fsControl:", -1, 8, 113, 84, 8
+        ENTRYFIELD      "", EF_CONTAINER, 117, 82, 120, 8, ES_MARGIN
+        ENTRYFIELD      "", EF_SOURCE, 117, 60, 120, 8, ES_MARGIN
+        LTEXT           "Dragitem.hstrContainer:", -1, 115, 92, 108, 8
+        LTEXT           "Dragitem.hstrSource/Target:", -1, 115, 70, 124, 8
+        LISTBOX         CO_FCONTROL, 8, 72, 88, 41, LS_MULTIPLESEL
+        CONTROL         "", CO_RETURN, 152, 3, 86, 35, WC_COMBOBOX, 
+                        CBS_DROPDOWNLIST | WS_GROUP | WS_TABSTOP | 
+                        WS_VISIBLE
+        LTEXT           "Return ", -1, 9, 34, 39, 8
+        ENTRYFIELD      "", EF_TARGET, 117, 47, 120, 8, ES_MARGIN
+        LTEXT           "(PRINTOBJ, DISCARDOBJ):", -1, 7, 26, 126, 8
+        AUTOCHECKBOX    "don't use selected", CB_SELECTED_D1, 115, 106, 96, 
+                        10
+    END
+END
+
+DLGTEMPLATE IDD_CONFIG2 LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "DrgDragFiles parameters", IDD_CONFIG2, 23, 3, 258, 94, 
+            WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        AUTORADIOBUTTON "fSourceRender=TRUE", RB_SOURCETRUE, 63, 75, 123, 10, 
+                        WS_TABSTOP
+        AUTORADIOBUTTON "fSourceRender=FALSE", RB_SOURCEFALSE, 64, 63, 119, 
+                        10
+        AUTOCHECKBOX    "don't use selected", CB_SELECTED_D2, 65, 49, 80, 10, 
+                        WS_GROUP
+        LTEXT           "DrgDragFiles filename:", -1, 25, 35, 111, 8
+        ENTRYFIELD      "", EF_FILEPATH, 27, 25, 202, 8, ES_MARGIN
+        DEFPUSHBUTTON   "OK", DID_OK, 64, 5, 40, 14, WS_GROUP
+        PUSHBUTTON      "Cancel", DID_CANCEL, 141, 5, 40, 14
+    END
+END

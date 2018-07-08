@@ -1,0 +1,26 @@
+;******* DRAGINFO C Sample Program Module Definition File (.DEF) ********
+;
+;  The module definition file supplies extra information about the program
+;  module to the LINKER.
+;
+;  Different HEAPSIZE used. ( 1024 bytes )
+
+
+NAME    draginfo WINDOWAPI
+
+DESCRIPTION 'drag&drop testprogram'
+
+STUB    'OS2STUB.EXE'
+
+CODE    MOVEABLE
+DATA    MOVEABLE MULTIPLE
+
+HEAPSIZE   18192
+STACKSIZE  20384
+EXPORTS    MyWindowProc
+           wpFileList
+           ObjectWinProc
+
+PROTMODE
+
+

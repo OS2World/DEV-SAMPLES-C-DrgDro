@@ -1,0 +1,39 @@
+# IBM Developer's Workframe/2 Make File Creation run at 00:54:40 on 02/22/93
+
+# Make File Creation run in directory:
+#   D:\QUELLEN\C2\DROPINFO;
+
+# Assumed INCLUDE environment variable path:
+#   C:\DEVL\C2\INCLUDE;
+#   C:\TOOLKT20\C\OS2H;
+#   C:\TOOLKT20\ASM\OS2INC;
+
+
+DROPINFO.RES:  DROPINFO.RC  \
+#  {.;$(INCLUDE)}OS2.H  \
+   {.;$(INCLUDE)}DROPINFO.H  \
+#    {.;$(INCLUDE)}OS2.H  \
+#    {.;$(INCLUDE)}STDIO.H  \
+#    {.;$(INCLUDE)}STDLIB.H  \
+#    {.;$(INCLUDE)}STRING.H  \
+#    {.;$(INCLUDE)}CTYPE.H  \
+   DROPINFO.ICO  \
+   DROPINFO.MAK
+
+DROPINFO.OBJ:  DROPINFO.C  \
+   {.;$(INCLUDE);}dropinfo.h  \
+#    {$(INCLUDE);}os2.h  \
+#    {$(INCLUDE);}stdio.h  \
+#    {$(INCLUDE);}stdlib.h  \
+#    {$(INCLUDE);}string.h  \
+#    {$(INCLUDE);}ctype.h  \
+   DROPINFO.MAK
+
+PUTMSG.OBJ:  PUTMSG.C  \
+   {.;$(INCLUDE);}dropinfo.h  \
+#    {$(INCLUDE);}os2.h  \
+#    {$(INCLUDE);}stdio.h  \
+#    {$(INCLUDE);}stdlib.h  \
+#    {$(INCLUDE);}string.h  \
+#    {$(INCLUDE);}ctype.h  \
+   DROPINFO.MAK
